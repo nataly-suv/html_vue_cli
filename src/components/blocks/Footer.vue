@@ -29,6 +29,7 @@
       <a href="#" :class="$style.middle__text">Home</a>
       <a href="#" :class="$style.middle__text">Project</a>
       <a href="#" :class="$style.middle__text">Blog</a>
+      <router-link to="/try" :class="$style.middle__text">Try</router-link>
     </div>
     <!-- правая часть -->
     <div :class="$style.rigth">

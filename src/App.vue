@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <HeaderComponent/>
-    <MainPage/>
-
+    <!-- <MainPage/> -->
+    <router-view></router-view>
    
     <FooterComponent/>
 
@@ -12,7 +12,7 @@
 <script>
 
 import HeaderComponent from "./components/blocks/Header.vue";
-import MainPage from './components/pages/MainPage.vue';
+// import MainPage from './components/pages/MainPage.vue';
 import FooterComponent from "./components/blocks/Footer.vue";
 
 
@@ -20,7 +20,7 @@ export default {
   name: 'App',
   components: {
     HeaderComponent,
-    MainPage,
+    // MainPage,
     FooterComponent, 
   }
 }
@@ -33,16 +33,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+@import './assets/style/globle.scss';
 
-a {
-  text-decoration: none;
-}
 
-body {
-  background-color: rgba(255, 255, 255, 1);
-}
 </style>

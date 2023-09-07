@@ -4,16 +4,28 @@
          -->
   <header :class="[$style.header, $style.center]">
     <!-- левая часть  -->
-    <div :class="$style.header__left">
+
+    <router-link to="/" :class="$style.header__left">
       <img :class="$style.header__left_img" src="/img/header-logo.svg" alt="" />
       <p :class="$style.header__left_text">Interno</p>
-    </div>
+    </router-link>
+
     <!-- правая часть -->
-    <div :class="$style.header__right">
-      <a href="#" :class="$style.header__right_text">Home</a>
-      <a href="#" :class="$style.header__right_text">Project</a>
-      <a href="#" :class="$style.header__right_text">Blog</a>
-    </div>
+    <nav :class="$style.header__right">
+      <router-link to="/" :class="$style.header__right_text">Home</router-link>
+      <router-link
+        to="/Project"
+        :class="$style.header__right_text"
+        :active-class="$style.active"
+        >Project</router-link
+      >
+      <router-link
+        to="/Blog"
+        :class="$style.header__right_text"
+        :active-class="$style.active"
+        >Blog</router-link
+      >
+    </nav>
   </header>
 
   <!-- 
@@ -86,7 +98,8 @@ export default {
     gap: 30px;
 
     &_text {
-      color: #292f36;
+      // color: #292f36;
+      color: var(--mainColorText);
       text-align: center;
       font-family: Jost;
       font-size: 20px;
@@ -100,4 +113,8 @@ export default {
     }
   }
 } // header
+
+.active {
+  color: rgba(205, 162, 116, 1);
+}
 </style>
