@@ -5,14 +5,14 @@
   <footer :class="[$style.footer, $style.center]">
     <!-- левая часть -->
     <div :class="$style.left">
-      <div :class="$style.left__logo">
+      <router-link to="/" :class="$style.left__logo">
         <img
           :class="$style.left__logo_img"
           src="/img/header-logo.svg"
           alt="foto"
         />
         <p :class="$style.left__logo_textLogo">Interno</p>
-      </div>
+      </router-link>
 
       <div :class="$style.left__text">
         It is a long established fact that a reader will be distracted lookings.
@@ -26,11 +26,29 @@
     <!-- центральная часть -->
     <div :class="$style.middle">
       <p :class="$style.middle__title">Pages</p>
-      <a href="#" :class="$style.middle__text">Home</a>
-      <a href="#" :class="$style.middle__text">Project</a>
-      <a href="#" :class="$style.middle__text">Blog</a>
-      <router-link to="/try" :class="$style.middle__text">Try</router-link>
+      <router-link
+        to="/"
+        exact
+        :active-class="$style.active"
+        :class="$style.middle__text"
+        >Home</router-link
+      >
+      <router-link
+        to="/Project"
+        exact
+        :active-class="$style.active"
+        :class="$style.middle__text"
+        >Project</router-link
+      >
+      <router-link
+        to="/Blog"
+        exact
+        :active-class="$style.active"
+        :class="$style.middle__text"
+        >Blog</router-link
+      >
     </div>
+    
     <!-- правая часть -->
     <div :class="$style.rigth">
       <p :class="$style.rigth__title">Contact</p>
@@ -180,6 +198,9 @@ export default {
   }
 } //правая часть
 
+.active {
+  color: rgba(205, 162, 116, 1);
+}
 //
 //
 </style>

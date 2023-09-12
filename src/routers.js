@@ -2,9 +2,11 @@
 import VueRouter from 'vue-router';
 
 import MainPage from './components/pages/MainPage';
-import ArticlesPage from './components/pages/ArticlesPage';
+import BlogPage from './components/pages/BlogPage';
+import BlogDetails from './components/blocks/BlogDetails';
 import ProjectPage from './components/pages/ProjectPage';
-import SomeTry from './components/pages/SomeTry';
+import ProjectDetails from './components/blocks/ProjectDetails';
+import NotFound from './components/pages/NotFound';
 
 export default new VueRouter({
     routes: [
@@ -13,17 +15,36 @@ export default new VueRouter({
             component: MainPage
         },
         {
-            path: '/Blog',
-            component: ArticlesPage
-        },
-        {
             path: '/Project',
             component: ProjectPage
         },
         {
-            path: '/try',
-            component: SomeTry
+            path: '/Project/ProjectDetails/:id',
+            component: ProjectDetails
         },
+        {
+            path: '/Blog',
+            component: BlogPage
+        },
+        {
+            path: '/Blog/:page',
+            component: BlogPage
+        },
+        {
+            path: '/Blog/BlogDetails/:id',
+            component: BlogDetails
+        },
+        {
+            path: '/NotFound',
+            component: NotFound
+        },
+        {
+            path: "*",
+            component: NotFound
+        }
     ],
+    scrollBehavior() {
+        return { x: 0, y: 0 }
+    },
     mode: 'history',
 })

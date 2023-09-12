@@ -6,21 +6,29 @@
     <!-- левая часть  -->
 
     <router-link to="/" :class="$style.header__left">
-      <img :class="$style.header__left_img" src="/img/header-logo.svg" alt="" />
+      <img :class="$style.header__left_img" src="/img/header-logo.svg" alt="foto" />
       <p :class="$style.header__left_text">Interno</p>
     </router-link>
 
     <!-- правая часть -->
     <nav :class="$style.header__right">
-      <router-link to="/" :class="$style.header__right_text">Home</router-link>
+      <router-link
+        to="/"
+        exact
+        :active-class="$style.active"
+        :class="$style.header__right_text"
+        >Home</router-link
+      >
       <router-link
         to="/Project"
+        exact
         :class="$style.header__right_text"
         :active-class="$style.active"
         >Project</router-link
       >
       <router-link
         to="/Blog"
+        exact
         :class="$style.header__right_text"
         :active-class="$style.active"
         >Blog</router-link

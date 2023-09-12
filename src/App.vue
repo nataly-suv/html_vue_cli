@@ -29,8 +29,8 @@ export default {
 <style>
 #app {
   font-family: DM Serif Display, Jost, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 @import './assets/style/globle.scss';
